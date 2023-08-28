@@ -71,20 +71,21 @@ public class UI {
     }
 
     private static void printPiece(ChessPiece piece, boolean background) {
-        if (background){
-            System.out.println(ANSI_BLUE_BACKGROUND);
+        if (background) {
+            System.out.print(ANSI_BLUE_BACKGROUND);
         }
+
         if (piece == null) {
             System.out.print("-" + ANSI_RESET);
-        }
-        else {
+        } else {
             if (piece.getColor() == Color.WHITE) {
-                System.out.print(ANSI_WHITE + piece + ANSI_RESET);
+                System.out.print(ANSI_WHITE);
+            } else {
+                System.out.print(ANSI_YELLOW);
             }
-            else {
-                System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
-            }
+            System.out.print(piece + ANSI_RESET);
         }
         System.out.print(" ");
     }
+
 }
